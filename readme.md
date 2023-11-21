@@ -9,6 +9,7 @@ npm i dotenv
 npm i cors
 npm i --save-dev @types/express
 npm i --save-dev @types/cors
+npm i ts-node-dev --save-dev
 ```
 
 2. initialize tsconfig
@@ -68,3 +69,71 @@ export default{
 ```
 
 8. install eslint and prettier https://blog.logrocket.com/linting-typescript-eslint-prettier
+8.1
+```
+npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+npx eslint --init
+npm install --save-dev prettier
+npm install eslint prettier --save-dev
+npm install --save-dev eslint-config-prettier
+```
+
+8.2 eslint config
+```
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-unused-expressions": "error",
+    "prefer-const": "error",
+    "no-console": "warn",
+    "no-undef": "error"
+  },
+  "globals": {
+    "process": "readonly"
+  }
+}
+
+```
+8.3 create .eslintignore
+```
+node_modules
+dist
+```
+
+8.4 create .prettierrc.json
+```
+{
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "avoid"
+}
+
+```
+8.5 wrtie npm script for eslint
+```
+  "scripts": {
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "lint": "eslint src --ignore-path .eslintignore --ext .ts",
+    "lint:fix": "npx eslint src --fix",
+    "build": "tsc",
+    "build:w": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src"
+  },
+```
