@@ -4,8 +4,8 @@
 npm init --y
 npm i express
 npm i mongoose
- npm i --save-dev typescript
- npm i dotenv
+npm i --save-dev typescript
+npm i dotenv
 ```
 
 2. initialize tsconfig
