@@ -6,6 +6,9 @@ npm i express
 npm i mongoose
 npm i --save-dev typescript
 npm i dotenv
+npm i cors
+npm i --save-dev @types/express
+npm i --save-dev @types/cors
 ```
 
 2. initialize tsconfig
