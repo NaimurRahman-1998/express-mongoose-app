@@ -16,4 +16,4 @@ const studentSchema = new Schema<Student>({
     bloodGroup : ["A", "A+", "B", "B+", "O", "O+", "AB", "AB-", "AB+"]
 })
 
-const StudentModel = model<Student>('Student' , studentSchema)
+export const StudentModel = model<Student>('Student' , studentSchema)
