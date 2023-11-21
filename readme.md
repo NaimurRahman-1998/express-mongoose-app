@@ -10,28 +10,13 @@ npm i cors
 npm i --save-dev @types/express
 npm i --save-dev @types/cors
 npm i ts-node-dev --save-dev
-```
-
-2. initialize tsconfig
-
-```
 tsc --init
 ```
 
-change root dir and out dir
-
-3. create script to build tsc
-
-```
-"scripts": {
-    "build": "tsc",
-  },
-```
-
+2. change root dir and out dir
 4. create express app
 5. create `.env` file
-6. connect mongoose
-   in env file
+6. connect mongoose in env file
 
 ```
 DATABASE_URL=mongodb+srv://admin-um:admin12345@cluster0.gexkyvp.mongodb.net/firstProject?retryWrites=true&w=majority
@@ -124,7 +109,7 @@ dist
 }
 
 ```
-8.5 wrtie npm script for eslint
+8.5 wrtie npm script for eslint and ts
 ```
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
