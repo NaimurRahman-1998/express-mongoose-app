@@ -16,11 +16,11 @@ tsc --init
 2. change root dir and out dir
 4. create express app
 5. create `.env` file
-6. connect mongoose in env file
-
 ```
+PORT=5000
 DATABASE_URL=mongodb+srv://admin-um:admin12345@cluster0.gexkyvp.mongodb.net/firstProject?retryWrites=true&w=majority
-```
+```   
+7. connect mongoose in env file
 
 in server.ts
 
